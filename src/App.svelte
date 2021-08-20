@@ -4,7 +4,7 @@
   }
   :global(body) {
     font-family: sans-serif;
-    background-color: #f4fffc;
+    background-color: #eaf6fa;
   }
   .container {
     display: flex;
@@ -21,11 +21,11 @@
     display: flex;
     align-items: center;
     padding: 12px 18px 12px 12px;
-    background-color: #d0ece7;
+    background-color: #76a0d1;
   }
   li {
-    margin-top: 0.5em;
-    min-width: 30em;
+    margin-top: 1em;
+    min-width: 25em;
   }
   .user a {
     font-size: 1.65em;
@@ -48,13 +48,13 @@
     padding: 6px 12px;
     background-color: #666;
     font-weight: 600;
-    color: #fefefe;
+    color: #fac0c0;
   }
   .refresh {
     border: none;
     border-radius: 4px;
     padding: 5px 10px;
-    background-color: #eee;
+    background-color: rgb(90, 241, 85);
     font-size: 1.2em;
   }
 </style>
@@ -73,7 +73,7 @@
             <div class="user">
               <img src={user.avatar_url} alt={user.login} />
               <a href={user.html_url}>{user.login}</a>
-              <button on:click={() => replace(user.login)}>x</button>
+              <button class="refresh" on:click={() => replace(user.login)}>x</button>
             </div>
           </li>
         {/each}
