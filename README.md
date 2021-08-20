@@ -1,17 +1,17 @@
-# :zap: Svelte Tailwind SSR
+# :zap: Svelte RXJS API
 
-* Sveltejs kit used with Tailwind CSS to display country API data
-* Code by [Ilia Mikhailov of Codechips.me](https://codechips.me/) - see [:clap: Inspiration](#clap-inspiration) below. Some minor changes due to deprecations & commenting
+* Snowpack-generated Sveltejs app to display random Github users
+* Code by [Ilia Mikhailov of Codechips.me](https://codechips.me/) - see [:clap: Inspiration](#clap-inspiration) below. Some minor changes due to deprecations & commenting.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
-![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
-![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
-![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/svelte-rxjs-api?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/svelte-rxjs-api?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/svelte-rxjs-api?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/svelte-rxjs-api?style=plastic)
 
 ## :page_facing_up: Table of contents
 
-* [:zap: Svelte Rollup Crypto](#zap-svelte-rollup-crypto)
+* [:zap: Svelte RXJS API](#zap-svelte-rxjs-api)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General Info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
@@ -25,10 +25,10 @@
 
 ## :books: General info
 
-* App bootstrapped with Create Snowpack App (CSA)
+* App bootstrapped with [Create Snowpack App (CSA)](https://www.snowpack.dev/)
 * Displays random Github user details
 * Note: Rxjs 'combineLatest' is deprecated - replaced with combineLatestWith
-* `JSON.stringify()` method used to convert a JavaScript object to a JSON string
+* `JSON.stringify()` method initially used to convert a JavaScript object to a JSON string
 
 ## :camera: Screenshots
 
@@ -36,8 +36,8 @@
 
 ## :signal_strength: Technologies
 
-* [Snowpack](https://www.snowpack.dev/) frontend build tool, alternative to webpack or Parcel etc.
-* [Sveltejs/kit v3](https://kit.svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
+* [Snowpack v3](https://www.snowpack.dev/) frontend build tool, alternative to webpack or Parcel etc.
+* [Sveltejs v3](https://svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
 * [rxjs](https://rxjs.dev/) Reactive Extensions JS library
 * [rxjs/ajax] used to fetch Github API observable
 * [Github REST API v2](https://docs.github.com/en/rest/reference/users) RESTful API with data on all world countries. [Get a Github access token](https://github.com/settings/tokens) so API access not limited
@@ -45,7 +45,7 @@
 ## :floppy_disk: Setup
 
 * `npm i` to install dependencies
-* `npm start` to run dev server on port `localhost:8080`
+* `npm start` to run Snowpack dev server on port `localhost:8080`
 * `npm run build` to build a static copy of app to a `build/` folder
 
 ## :wrench: Testing
@@ -63,7 +63,7 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Add more commenting and change code
+* To-Do: Add more commenting and try diffferent rxjs code
 
 ## :clap: Inspiration - code by Ilia Mikhailov
 
