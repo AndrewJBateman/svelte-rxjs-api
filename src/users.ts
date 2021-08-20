@@ -4,7 +4,6 @@ import {
 	mergeMap,
 	startWith,
 	share,
-	tap,
 	take,
 	toArray,
 } from 'rxjs/operators';
@@ -26,15 +25,9 @@ const fetchUsers = () =>
 	ajax.getJSON(`${usersEndpoint}?since=${randomOffset()}`);
 
 // call fetchUsers function when we click the refresh button
-const userPool = reload.pipe(
-	// tap(console.log),
-	startWith(null),
-	mergeMap(fetchUsers),
-	share()
-);
+const userPool = reload.pipe(startWith(null), mergeMap(fetchUsers), share());
 
-// helper function to get a random user from
-// the user list we got from Github
+// helper function to get a random user
 const randomUser = (users: any[]) =>
 	users[Math.floor(Math.random() * users.length)];
 
@@ -42,7 +35,6 @@ const users = userPool.pipe(mergeAll(), take(8), toArray());
 
 // replace user with a new one - check if already been on list
 const replaceUser = (users: any[], pool: any[], login: string) => {
-	console.log('users: ', users, 'pool: ', pool, 'login: ', login);
 	const getIndex = (username: string) =>
 		users.findIndex((user) => user.login === username);
 	const idx = getIndex(login);
@@ -57,24 +49,18 @@ const replaceUser = (users: any[], pool: any[], login: string) => {
 	return users;
 };
 
-// the suggest 'x' button stream
-// we initialize it with an empty string as starting state
 const suggest = new BehaviorSubject('');
 
-// wrap the suggest stream in the helper function that we export
+// wrap suggest stream in the helper function that we export
 const replace = (username: string) => suggest.next(username);
 
-// our main suggestions stream
+// Main suggestions stream
 const suggestions = reload.pipe(
-	// emulate the first click to trigger the chain
 	startWith(null),
-	// replace `null` with `users` stream
 	mergeMap(() => users),
-	tap(console.log),
 	// this is where we handle new user suggestions
 	combineLatestWith(userPool, suggest, replaceUser),
-	// start with an empty array to keep Svelte store happy
-	startWith([])
+  startWith([])
 );
 
 export { users, replace, refresh, suggestions };
