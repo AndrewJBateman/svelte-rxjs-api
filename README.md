@@ -13,13 +13,15 @@
 
 * [:zap: Svelte RXJS API](#zap-svelte-rxjs-api)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
-  * [:books: General Info](#books-general-info)
+  * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
   * [:signal_strength: Technologies](#signal_strength-technologies)
   * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:wrench: Testing](#wrench-testing)
   * [:computer: Code Examples](#computer-code-examples)
+  * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
-  * [:clap: Inspiration](#clap-inspiration)
+  * [:clap: Inspiration - code by Ilia Mikhailov](#clap-inspiration---code-by-ilia-mikhailov)
   * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
@@ -38,8 +40,8 @@
 
 * [Snowpack v3](https://www.snowpack.dev/) frontend build tool, alternative to webpack or Parcel etc.
 * [Sveltejs v3](https://svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
-* [rxjs](https://rxjs.dev/) Reactive Extensions JS library
-* [rxjs/ajax] used to fetch Github API observable
+* [RxJS v7](https://rxjs.dev/) Reactive Extensions JS library
+* [RxJS/AJAX] used to fetch Github API observable
 * [Github REST API v2](https://docs.github.com/en/rest/reference/users) RESTful API with data on all world countries. [Get a Github access token](https://github.com/settings/tokens) so API access not limited
 
 ## :floppy_disk: Setup
@@ -63,7 +65,7 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Add more commenting and try diffferent rxjs code
+* To-Do: Add more commenting and try diffferent RxJS methods
 
 ## :clap: Inspiration - code by Ilia Mikhailov
 
