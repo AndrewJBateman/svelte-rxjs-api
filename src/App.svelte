@@ -1,3 +1,28 @@
+<script>
+  import { refresh, suggestions, replace } from "./users";
+</script>
+
+<div class="container">
+  <div>
+    <button class="refresh" on:click={refresh}>refresh</button>
+    {#if $suggestions}
+      <ul>
+        {#each $suggestions as user}
+          <li>
+            <div class="user">
+              <img src={user.avatar_url} alt={user.login} />
+              <a href={user.html_url}>{user.login}</a>
+              <button class="refresh" on:click={() => replace(user.login)}
+                >x</button
+              >
+            </div>
+          </li>
+        {/each}
+      </ul>
+    {/if}
+  </div>
+</div>
+
 <style>
   :global(*, *:before, *:after) {
     box-sizing: border-box;
@@ -58,26 +83,3 @@
     font-size: 1.2em;
   }
 </style>
-
-<script>
-  import { refresh, suggestions, replace } from './users';
-</script>
-
-<div class="container">
-  <div>
-    <button class="refresh" on:click={refresh}>refresh</button>
-    {#if $suggestions}
-      <ul>
-        {#each $suggestions as user}
-          <li>
-            <div class="user">
-              <img src={user.avatar_url} alt={user.login} />
-              <a href={user.html_url}>{user.login}</a>
-              <button class="refresh" on:click={() => replace(user.login)}>x</button>
-            </div>
-          </li>
-        {/each}
-      </ul>
-    {/if}
-  </div>
-</div>
