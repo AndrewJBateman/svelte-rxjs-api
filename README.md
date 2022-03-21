@@ -56,11 +56,32 @@
 
 ## :computer: Code Examples
 
-* N/A
+* Svelte code to display Github user info.
+
+```svelte
+<div>
+    <button class="refresh" on:click={refresh}>refresh</button>
+    {#if $suggestions}
+      <ul>
+        {#each $suggestions as user}
+          <li>
+            <div class="user">
+              <img src={user.avatar_url} alt={user.login} />
+              <a href={user.html_url}>{user.login}</a>
+              <button class="refresh" on:click={() => replace(user.login)}
+                >x</button
+              >
+            </div>
+          </li>
+        {/each}
+      </ul>
+    {/if}
+  </div>
+  ```
 
 ## :cool: Features
 
-* N/A
+* Observables can be displayed in Svelte markup with a preceding $
 
 ## :clipboard: Status & To-Do List
 
